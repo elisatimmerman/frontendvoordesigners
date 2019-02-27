@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 5em;
+    padding: 1em;
+    position: fixed;
+    background: white;
+    top: 0;
+    z-index: 3;
+}
+
+h3 {
+    margin-right: 1em;
+}
+
+section {
+    background: white;
+    width: 10em;
+    height: auto;
+    grid-row: 2;
+    position: relative;
+    top: 5em;
+}
+
+h2 {
+    font-size: 1em;
+    margin-bottom: 1em;
+    margin-left: 1em;
+    width: 10em;
+}
+
+input[type='checkbox'] {
+    left: -443211em;
+    position: absolute;
+}
+
+form div {
+    width: 2em;
+    height: 2em;
+    margin: 1em;
+    display: inline-block;
+}
+
+#blue {
+    background: blue;
+}
+
+#blue:hover {
+    background: blue;
+    border: 2px solid black;
+}
+
+
+#brown {
+    background: brown;
+}
+
+#brown:hover {
+    background: brown;
+    border: 2px solid black;
+}
+
+#green {
+    background: green;
+}
+
+#green:hover {
+    background: green;
+    border: 2px solid black;
+}
+
+#red {
+    background: red;
+}
+
+#red:hover {
+    background: red;
+    border: 2px solid black;
+}
+
+
+main {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 5em;
+}
+
+img {
+    width: 40vw;
+    height: 20em;
+    margin: 0.5em;
+}
+
+.blue img.blue {
+    display: none;
+}
+
+.brown img.brown {
+    display: none;
+}
+
+.green img.green {
+    display: none;
+}
+
+.red img.red {
+    display: none;
+}
