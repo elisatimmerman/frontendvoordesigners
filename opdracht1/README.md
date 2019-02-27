@@ -1,16 +1,14 @@
 # frontend voor designers - opdracht 1
-HTestier beschrijf je de opdracht, wat je hebt gemaakt en hoe je je ontwerp door verschillende versies te testen hebt verbeterd. Bij iedere test voeg je een link toe naar de betreffende demo.
+Beschrijving opdracht 1
 
-Bijvoorbeel bij de demo van versie in kun je zo een link maken, zodat iedereen de demo zelf kan uitproberen:
+Ik heb een fotografie website gemaakt. Mensen kunnen op kleuren filteren.
 
-[Demo 1 voor opdracht 1](https://koopreynders.github.io/frontendvoordesigners/opdracht1/v1/)
+Hoe ging het?
+Het ontwerpen van de website was niet heel moeilijk. Alleen javascript is nog niet mijn sterkste kant. Ik kwam er in het begin niet uit. Toen heb ik samen met een klasgenoot naar de code gekeken en die hielp mij verder.
 
-[Demo 2 voor opdracht 1](https://koopreynders.github.io/frontendvoordesigners/opdracht1/v2/)
+Daarna had ik meer kleuren toegevoegd en liep ik weer tegen problemen aan. Het probleem was dat er bij de blauwe en bruine kleur ook andere foto's werden laten zien. Dit duurde lang voordat ik erachter kwam hoe het kon. Ik ging namelijk aan de slag met een veel te ingewikkelde code. Vervolgens heb ik alles weggegooid en heb ik een makkelijkere code gemaakt.
 
-[Demo 3 voor opdracht 1](https://koopreynders.github.io/frontendvoordesigners/opdracht1/v3/)
+Het filteren op kleur lukt nu. Alleen als je op een andere kleur wilt filteren dan moet je de pagina refreshen. Dit vind ik jammer en wil hier dan ook nog even naar kijken omdat ik wil dat het werkt.
 
-[Demo 4 voor opdracht 1](https://koopreynders.github.io/frontendvoordesigners/opdracht1/v4/)
-
-Je kan ook een link plaatsen naar de bron code van de demo:
-
-[Code demo 1 voor opdracht 1](https://github.com/KoopReynders/frontendvoordesigners/blob/master/opdracht1/v1/)
+Feedback
+Ik kreeg als feedback dat ik een :hover en :focus op de kleuren moest laten zien. De :hover was snel gefixt. Alleen kreeg ik nog niet de :focus erop. Ook moet ik nog naar de javascript kijken.
