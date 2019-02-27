@@ -11,4 +11,4 @@ Daarna had ik meer kleuren toegevoegd en liep ik weer tegen problemen aan. Het p
 Het filteren op kleur lukt nu. Alleen als je op een andere kleur wilt filteren dan moet je de pagina refreshen. Dit vind ik jammer en wil hier dan ook nog even naar kijken omdat ik wil dat het werkt.
 
 Feedback
-Ik kreeg als feedback dat ik een :hover en :focus op de kleuren moest laten zien. De :hover was snel gefixt. Alleen kreeg ik nog niet de :focus erop. Ook moet ik nog naar de javascript kijken.
+Ik kreeg als feedback van Amy dat ik een :hover en :focus op de kleuren moest laten zien. De :hover was snel gefixt. Alleen kreeg ik nog niet de :focus erop. Ook moet ik nog naar de javascript kijken.
