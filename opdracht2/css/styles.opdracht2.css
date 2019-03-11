@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1em;
+}
+
+.slider {
+  width: 100vw;
+  height: 70vh;
+  margin-left: -1em;
+  display: flex;
+  overflow-x: auto;
+
+}
+.slide-staand {
+  width: 30vw;
+  margin: 0.5em;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.slide-liggend {
+  width: 50vw;
+  margin: 0.5em;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+#slide-1 {
+    margin-left: -1em;
+}
+
+.knoppen {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.knoppen::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.knop {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 1em;
+    margin-top: 1em;
+    text-align: center;
+    background: black;
+}
+
+a {
+    line-height: 1.65;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+}
+
+.beschrijvingMidden {
+    width: 100vw;
+}
+
+#beschrijving {
+    width: 50%;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+}
+
+
