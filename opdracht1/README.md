@@ -13,4 +13,6 @@ Het filteren op kleur lukt nu. Alleen als je op een andere kleur wilt filteren d
 Feedback
 Ik kreeg als feedback van Amy dat ik een :hover en :focus op de kleuren moest laten zien. De :hover was snel gefixt. Alleen kreeg ik nog niet de :focus erop. Ook moet ik nog naar de javascript kijken.
 
+Link: https://elisatimmerman.github.io/frontendvoordesigners/opdracht1/
+
 
