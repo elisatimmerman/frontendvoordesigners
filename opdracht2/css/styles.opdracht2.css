@@ -9,11 +9,13 @@ body {
   margin-left: -1em;
   display: flex;
   overflow-x: auto;
-
 }
+
 .slide-staand {
   width: 30vw;
   margin: 0.5em;
+  margin-bottom: 0;
+  margin-top: 0;
   flex-shrink: 0;
   height: 100%;
 }
@@ -21,39 +23,48 @@ body {
 .slide-liggend {
   width: 50vw;
   margin: 0.5em;
+  margin-bottom: 0;
+  margin-top: 0;
   flex-shrink: 0;
   height: 100%;
 }
 
 #slide-1 {
-    margin-left: -1em;
+  margin-left: -1em;
 }
 
 .knoppen {
     display: flex;
     justify-content: center;
     width: 100vw;
-}
-
-.knoppen::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+    height: 3em;
+    background: #efefef;
+    margin-left: -1em;
+    align-items: center;
 }
 
 .knop {
     width: 1.5em;
     height: 1.5em;
     margin-right: 1em;
-    margin-top: 1em;
     text-align: center;
     background: black;
+    box-shadow: 0 0 5px grey;
 }
 
 a {
+    width: 1.5em;
+    height: 1.5em;
+    overflow: hidden;
     line-height: 1.65;
     display: inline-block;
     color: white;
     text-decoration: none;
+}
+
+a img {
+    width: 1.5em;
+    height: 1.5em;
 }
 
 .beschrijvingMidden {
@@ -67,4 +78,21 @@ a {
     margin-bottom: 0.5em;
 }
 
+.slider::-webkit-scrollbar {
+    width: 20em;
+}
 
+.slider::-webkit-scrollbar-track {
+    border-radius: 10px;
+    height: 1px;
+}
+
+.slider::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+    box-shadow: 0 0 5px grey;
+}
+
+.slider::-webkit-scrollbar-thumb:hover {
+    background: #293133;
+}
