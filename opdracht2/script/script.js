@@ -105,3 +105,5 @@ document.getElementById('afbeeldingTwee').addEventListener('click', function() {
 document.getElementById('afbeeldingDrie').addEventListener('click', function() {tekst(3);}, false);
 document.getElementById('afbeeldingVier').addEventListener('click', function() {tekst(4);}, false);
 document.getElementById('afbeeldingVijf').addEventListener('click', function() {tekst(5);}, false);
+
+
