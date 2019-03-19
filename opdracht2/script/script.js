@@ -58,11 +58,14 @@ var afbeeldingGrootVijf = document.getElementById('slide-5');
 var groteAfbeeldingen = [afbeeldingGrootEen, afbeeldingGrootTwee, afbeeldingGrootDrie, afbeeldingGrootVier, afbeeldingGrootVijf];
 
 
+var index = 0;
+
 
 /*De eerste loop reset de styling die eventueel gezet kan zijn. De swtich zorgt ervoor dat het juiste element wordt getoond. De laatste loop zorgt ervoor dat alle andere elementen een brightness van 40% hebben*/
 
 function tekst(nummer) {
     var i;
+    index = nummer; //Zet de index naar het nummer van de afbeelding
 
     for (i = 0; i < groteAfbeeldingen.length; i++){
         groteAfbeeldingen[i].style.filter = null;
@@ -91,12 +94,33 @@ function tekst(nummer) {
             break;
     }
 
+
     for (i = 0; i < groteAfbeeldingen.length; i++){
         if(groteAfbeeldingen[i].style.filter !== 'brightness(100%)') {
             groteAfbeeldingen[i].style.filter = 'brightness(40%)';
         }
     }
 }
+
+document.body.addEventListener ('keyup', function (e) {
+if (e.keyCode === 68) {
+    if (index >= 5) {
+        index = 0;
+    }
+    tekst(++index);
+    }
+});
+
+
+document.body.addEventListener ('keyup', function (e) {
+if (e.keyCode === 65) {
+    if (index <= 0) {
+        index = 6;
+    }
+    tekst(--index);
+    }
+});
+
 
 
 /*Aan de volgende elementen wordt een evenListener op klik gezet, deze roept tekst aan met als parameter de index van het element*/
@@ -105,5 +129,7 @@ document.getElementById('afbeeldingTwee').addEventListener('click', function() {
 document.getElementById('afbeeldingDrie').addEventListener('click', function() {tekst(3);}, false);
 document.getElementById('afbeeldingVier').addEventListener('click', function() {tekst(4);}, false);
 document.getElementById('afbeeldingVijf').addEventListener('click', function() {tekst(5);}, false);
+
+//document.addEventListener('keydown', function() {tekst();});
 
 
