@@ -14,6 +14,9 @@ Overdag had ik zelf de code geschreven en aangepast. Het resultaat was wat ik wi
 19 maart 2019
 Ik heb een tijdje lopen spelen met de keyCode. Deze was ik namelijk vergeten toe te voegen. Na een tijdje kwam ik er nog niet uit en heb ik samen met mijn broertje er naar gekeken. Het is nu allemaal gelukt!
 
+Volgende afbeelding = D
+Vorige afbeelding = A
+
 Link: https://elisatimmerman.github.io/frontendvoordesigners/opdracht2/
 
 
