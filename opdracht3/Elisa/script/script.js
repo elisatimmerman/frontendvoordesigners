@@ -30,7 +30,7 @@ function showData(jsonObj) {
   function films(jsonObj) {
       var films = jsonObj['section'];
 
-      for (var i = 0; i < titel.length; i++) {
+      for (var i = 0; i < films.length; i++) {
           var filmBekijken = document.createElement('article');
 
         //TITEL, COVER EN BESCHRIJVING
@@ -40,6 +40,12 @@ function showData(jsonObj) {
         filmplot.textContent = films[i].simple_plot;
         var filmcover = document.createElement('img');
         filmcover.src = films[i].cover;
+
+        GENRES
+    var genres = films[i].genres;
+    for (var n = 0; n < genres.length; n++) {
+      console.log("genre: ",genres[n]);
+    } //end for genres
       }
 
       filmBekijken.appendChild(filmtitel);
@@ -49,18 +55,9 @@ function showData(jsonObj) {
     section.appendChild(filmBekijken);
   }
 
-
-
-    // var films = jsonObj;
-    // console.log('showData films', films);
-
-    // for (var i = 0; i < films.length; i++) {
-    //     console.log('films' + i);
-    // }
-
 section.appendChild(showData);
 
-
+function laadAfbeeldingenMetXHR () {
 var request = new XMLHttpRequest();
 request.open('get', jsonUrl);
 request.responseType = 'json';
@@ -69,14 +66,16 @@ request.send();
 request.onload = function() {
     var superHeroesText = request.responsive;
     var superHeroes = JSON.parse(superHeroesText);
-    showData(superHeroes);
-    showHeroes(showData);
-}
+    showData(request.response);
+});
 
-var myJson = {"name": 'Chris'};
-myJson
-var myString = JSON.stringify(myJson);
-myString
+}
+laadAfbeeldingenMetXHR();
+
+// var myJson = {"name": 'Chris'};
+// myJson
+// var myString = JSON.stringify(myJson);
+// myString
 
 
 
