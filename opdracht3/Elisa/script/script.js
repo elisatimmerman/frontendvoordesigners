@@ -4,6 +4,7 @@
 
 var jsonUrl = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/json/movies.json'; //json file op github
 var button = document.querySelector('button');
+// var evilDead = window.location.href="../evildead/evildead.html";
 var loaderElement = document.querySelector('span');
 var section = document.querySelector('section');
 // console.log("loaderElement",loaderElement);
@@ -28,6 +29,13 @@ function showData(movies) {
     simplePlotElement.textContent = 'Description: ' + movies[i].simple_plot;
     movieContainer.appendChild(simplePlotElement);
 
+    // var evilDeadId = movies[i].id;
+    // var evilDead = window.location.href="../evildead/evildead.html";
+
+    // evilDeadId.onclick = function () {
+    //   evilDead.classList.add('show');
+    // }
+
     section.appendChild(movieContainer)
   }
 }
@@ -40,4 +48,8 @@ function loadMoviesFromJson(){
   })
 }
 loadMoviesFromJson();
+
+// button.onclick = function () {
+//   evilDead.classList.add('show');
+// }
 
