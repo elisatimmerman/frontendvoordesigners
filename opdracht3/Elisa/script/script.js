@@ -10,24 +10,32 @@ var loaderElement = document.querySelector('span');
 var section = document.querySelector('section');
 // console.log("loaderElement",loaderElement);
 
+function showMovie(movie) {
+  console.log('hoi');
+  
+}
+
 function showData(movies) {
   for (var i = 0; i < movies.length; i++) {
+    var movie = movies[i];
     var movieContainer = document.createElement('article');
 
+    movieContainer.onclick = showMovie(movie);
+
     var movieCoverElement = document.createElement('img');
-    movieCoverElement.src = movies[i].cover;
+    movieCoverElement.src = movie.cover;
     movieContainer.appendChild(movieCoverElement);
 
     var releaseDateElement = document.createElement('p');
-    releaseDateElement.textContent = movies[i].release_date;
+    releaseDateElement.textContent = movie.release_date;
     movieContainer.appendChild(releaseDateElement);
 
     var movieTitleElement = document.createElement('h2');
-    movieTitleElement.textContent = movies[i].title;
+    movieTitleElement.textContent = movie.title;
     movieContainer.appendChild(movieTitleElement);
 
     var simplePlotElement = document.createElement('p');
-    simplePlotElement.textContent = 'Description: ' + movies[i].simple_plot;
+    simplePlotElement.textContent = 'Description: ' + movie.simple_plot;
     movieContainer.appendChild(simplePlotElement);
 
     // var evilDeadId = movies[i].id;
@@ -55,11 +63,4 @@ loadMoviesFromJson();
 //   var evilDeadPage = document.getElementById('1');
 //   // window.location = "../evildead/evildead.html";
 // }
-
-button.onclick = function (event) {
-  event.preventDefault();
-  var evilDeadPage = document.getElementById('1');
-  // window.location = "../evildead/evildead.html";
-}
-
 
