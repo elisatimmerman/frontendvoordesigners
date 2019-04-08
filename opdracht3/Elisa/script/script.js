@@ -12,6 +12,8 @@ const loaderElement = document.querySelector('span');
 const section = document.querySelector('section');
 // console.log("loaderElement",loaderElement);
 
+
+/**OVERZICHTSPAGINA ALLE FILM */
 function showData(movies) {
   for (let i = 0; i < movies.length; i++) {
     const movie = movies[i];
@@ -59,9 +61,12 @@ function loadMoviesFromJson() {
 }
 loadMoviesFromJson();
 
+
+
+/**DETAILPAGINA FILM */
 function showMovie(movie) {
   console.log(movie);
-  const movieInfo = document.createElement('article');
+  const movieInfo = document.createElement('main');
 
   const movieCoverElement = document.createElement('img');
   movieCoverElement.src = movie.cover;
@@ -71,6 +76,10 @@ function showMovie(movie) {
   releaseDateElement.textContent = movie.release_date;
   movieInfo.appendChild(releaseDateElement);
 
+  const genreElement = document.createElement('p');
+  genreElement.textContent = movie.genres;
+  movieInfo.appendChild(genreElement);
+
   const movieTitleElement = document.createElement('h2');
   movieTitleElement.textContent = movie.title;
   movieInfo.appendChild(movieTitleElement);
@@ -79,10 +88,47 @@ function showMovie(movie) {
   plotElement.textContent = 'Description: ' + movie.plot;
   movieInfo.appendChild(plotElement);
 
+  const buttonViewElement = document.createElement('button');
+  buttonViewElement.innerHTML = 'Bekijk de film';
+  movieInfo.appendChild(buttonViewElement);
+
+
+
+  const actorsElement = document.createElement('div');
+
+  const actorsTitelElement = document.createElement('h3');
+  actorsTitelElement.innerHTML = 'Acteurs';
+  actorsElement.appendChild(actorsTitelElement);
+
   for (let i = 0; i < movie.actors.length; i++) {
-    const ActorElement = generateActorElement (movie.actors[i]);
-    movieInfo.appendChild(ActorElement);
+    const actorElement = generateActorElement (movie.actors[i]);
+    actorsElement.appendChild(actorElement);
   }
+
+  movieInfo.appendChild(actorsElement);
+
+  // while(section.firstChild){
+  //   section.removeChild(section.firstChild);
+  // }
+  
+  // section.appendChild(movieInfo);
+
+
+
+
+  const reviewsElement = document.createElement('div');
+  // reviewsElement.innerHTML = 'Reviews';
+
+  const reviewTitelElement = document.createElement('h3');
+  reviewTitelElement.innerHTML = 'Reviews';
+  reviewsElement.appendChild(reviewTitelElement);
+
+  for (let i = 0; i < movie.reviews.length; i++) {
+    const reviewElement = generateReviewElement (movie.reviews[i]);
+    reviewsElement.appendChild(reviewElement);
+  }
+
+  movieInfo.appendChild(reviewsElement);
 
   while(section.firstChild){
     section.removeChild(section.firstChild);
@@ -92,13 +138,37 @@ function showMovie(movie) {
 }
 
 function generateActorElement (actor) {
-  const actorContainer = document.createElement('article')
-
-  const actorNameElement = document.createElement('h3');
+  const actorContainer = document.createElement('div')
+  
+  // const actorsTitelElement = document.createElement('h3');
+  // actorsTitelElement.innerHTML = 'Acteurs';
+  // actorContainer.appendChild(actorsTitelElement);
+  
+  const actorNameElement = document.createElement('h4');
   actorNameElement.textContent = actor.actor_name;
-  actorContainer .appendChild(actorNameElement);
+  actorContainer.appendChild(actorNameElement);
+
+  const actorcharacterElement = document.createElement('p');
+  actorcharacterElement.textContent = actor.character;
+  actorContainer.appendChild(actorcharacterElement);
+
   /*Opmaka voor 1 actor, return actorElement*/
   return actorContainer;
+}
+
+function generateReviewElement (review) {
+  const reviewContainer = document.createElement('div')
+  
+  const reviewScoreElement = document.createElement('p');
+  reviewScoreElement.textContent = review.score;
+  reviewContainer.appendChild(reviewScoreElement);
+
+  const reviewTextElement = document.createElement('p');
+  reviewTextElement.textContent = review.review_text;
+  reviewContainer.appendChild(reviewTextElement);
+
+  /*Opmaka voor 1 actor, return actorElement*/
+  return reviewContainer;
 }
 
 
