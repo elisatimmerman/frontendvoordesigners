@@ -2,19 +2,18 @@
 /*eslint-env browser*/
 /*eslint 'no-console':0*/
 
-/*const betekent dat je hem niet mag aanpassen */
+/*const betekent dat je hem niet mag aanpassen en alleen in de code blok mag gebruiken waarin je het gemaakt hebt */
 
 const jsonUrl = 'https://koopreynders.github.io/frontendvoordesigners/opdracht3/json/movies.json'; //json file op github
-const button = document.querySelector('button');
-// var evilDeadPage = window.location="../evildead/evildead.html";
-// var evilDeadPage = document.getElementById('1');
-const loaderElement = document.querySelector('span');
+
+const throbber = document.getElementById('loadingIcon');
 const section = document.querySelector('section');
-// console.log("loaderElement",loaderElement);
 
 
+/**Er worden nieuwe html element toegevoegd in de section waarin de data, die wordt opgevraagd, wordt geplaatst */
 /**OVERZICHTSPAGINA ALLE FILM */
 function showData(movies) {
+  throbber.style.visibility = "visible";
   for (let i = 0; i < movies.length; i++) {
     const movie = movies[i];
     const movieContainer = document.createElement('article');
@@ -50,8 +49,11 @@ function showData(movies) {
       showMovie(movie);
     });
   }
+  throbber.style.visibility = "hidden";
 }
 
+
+/**De data wordt vanuit Json geladen voor overzichtspagina */
 function loadMoviesFromJson() {
   fetch(jsonUrl).then((response) => {
     response.json().then((movies) => {
@@ -62,11 +64,17 @@ function loadMoviesFromJson() {
 loadMoviesFromJson();
 
 
-
+/**Door middel van de while loop, wordt de HTML pagina geleegd. Daarna worden er nieuwe elementen toegevoegd aan de pagina */
 /**DETAILPAGINA FILM */
 function showMovie(movie) {
+  throbber.style.visibility = "visible";
   console.log(movie);
   const movieInfo = document.createElement('main');
+
+  /**Verwijderd alle kinder elementen van de section */
+  while(section.firstChild){
+    section.removeChild(section.firstChild);
+  }
 
   const movieCoverElement = document.createElement('img');
   movieCoverElement.src = movie.cover;
@@ -89,9 +97,18 @@ function showMovie(movie) {
   movieInfo.appendChild(plotElement);
 
   const buttonViewElement = document.createElement('button');
-  buttonViewElement.innerHTML = 'Bekijk de film';
+  buttonViewElement.innerHTML = 'Bekijk de trailer';
   movieInfo.appendChild(buttonViewElement);
+  
+  buttonViewElement.addEventListener('click', () => {
+    window.location.href = movie.trailer;
+  });
 
+  document.addEventListener ('keyup', function (e) {   
+    if (e.keyCode == 13) {
+          window.location.href = movie.trailer;
+          }
+      });
 
 
   const actorsElement = document.createElement('div');
@@ -107,17 +124,7 @@ function showMovie(movie) {
 
   movieInfo.appendChild(actorsElement);
 
-  // while(section.firstChild){
-  //   section.removeChild(section.firstChild);
-  // }
-  
-  // section.appendChild(movieInfo);
-
-
-
-
   const reviewsElement = document.createElement('div');
-  // reviewsElement.innerHTML = 'Reviews';
 
   const reviewTitelElement = document.createElement('h3');
   reviewTitelElement.innerHTML = 'Reviews';
@@ -129,20 +136,13 @@ function showMovie(movie) {
   }
 
   movieInfo.appendChild(reviewsElement);
-
-  while(section.firstChild){
-    section.removeChild(section.firstChild);
-  }
   
   section.appendChild(movieInfo);
+  throbber.style.visibility = "hidden";
 }
 
 function generateActorElement (actor) {
   const actorContainer = document.createElement('div')
-  
-  // const actorsTitelElement = document.createElement('h3');
-  // actorsTitelElement.innerHTML = 'Acteurs';
-  // actorContainer.appendChild(actorsTitelElement);
   
   const actorNameElement = document.createElement('h4');
   actorNameElement.textContent = actor.actor_name;
@@ -152,7 +152,6 @@ function generateActorElement (actor) {
   actorcharacterElement.textContent = actor.character;
   actorContainer.appendChild(actorcharacterElement);
 
-  /*Opmaka voor 1 actor, return actorElement*/
   return actorContainer;
 }
 
@@ -167,8 +166,9 @@ function generateReviewElement (review) {
   reviewTextElement.textContent = review.review_text;
   reviewContainer.appendChild(reviewTextElement);
 
-  /*Opmaka voor 1 actor, return actorElement*/
+  const createElement = document.createElement('p');
+  createElement.textContent = review.created_at;
+  reviewContainer.appendChild(createElement);
+
   return reviewContainer;
 }
-
-
