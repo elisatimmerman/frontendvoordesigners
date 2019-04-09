@@ -11,7 +11,7 @@ Om te kijken hoe json werkt heb ik even met het bestand gespeeld. Allereerst heb
 Samen met mijn broertje is het gelukt om de content online te krijgen. Daarna heb ik de overzichtspagina samengesteld en opgemaakt. Om een nieuwe HTML-pagina te linken met Javascript, is mij niet gelukt.
 
 Testen
-<img src="Images/Naomi.jpg" height="100">
+<img src="Images/Naomi.jpg" width="200">
 
 Om erachter te komen of een leek mijn website zou begrijpen, heb ik een test gedaan. De feedback: De eerste pagina is heel duidelijk, je hebt een overzicht van films en je kan kiezen voor meer informatie. Als ik klik op meer informatie dan krijg ik ook meer informatie, dat is fijn. Ik kan van daaruit alleen niet meer terug naar het overzicht van de films. Daarnaast staan de cijfers van de reviews erg ver onder de namen waardoor ze een beetje zweven. Ik denk als ze wat dichterbij staan dat ze dan meer eenheid hebben met elkaar.
 
